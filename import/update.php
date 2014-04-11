@@ -7,6 +7,9 @@ $dirList = array(
     'bicycle' => array(
         'jcdecaux',
     ),
+    'parking' => array(
+        'trafic.rouen.fr',
+    ),
 );
 
 $totalScript = 0;
