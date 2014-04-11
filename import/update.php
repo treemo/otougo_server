@@ -10,6 +10,9 @@ $dirList = array(
     'parking' => array(
         'trafic.rouen.fr',
     ),
+    'arretTransport' => array(
+        'pointArretSM',
+    ),
 );
 
 $totalScript = 0;
