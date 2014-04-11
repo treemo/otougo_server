@@ -1,8 +1,10 @@
 <?php
 
 $result = download('http://trafic.rouen.fr/parking');
-$result = explode('"features":', $result)[1];
-$result = explode(',"title":"",', $result)[0];
+$result = explode('"features":', $result);
+$result = $result[1];
+$result = explode(',"title":"",', $result);
+$result = $result[0];
 $result = json_decode($result);
 
 foreach($result as $data) {
