@@ -101,7 +101,6 @@ class MarkerObject {
 	// ==============================================================
 	public function save() {
 		$sql = new Sql();
-
         $sql->prepare('INSERT INTO marker (id,type,latitude,longitude,name,last_update) VALUES (:id,:type,:latitude,:longitude,:name,FROM_UNIXTIME(:last_update)) ON DUPLICATE KEY UPDATE latitude=:latitude, longitude=:longitude, name=:name, last_update=FROM_UNIXTIME(:last_update)')
             ->bindValue(':id', empty($this->id) ? null : $this->id)
             ->bindValue(':type', get_class($this))
