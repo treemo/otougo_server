@@ -14,11 +14,7 @@ class MarkerManager {
         }
 
         $marker = new $type();
-
-        if (!$marker->create($arg)) {
-            self::$lastError = 'create marker error : '.json_encode($marker->getError());
-            return null;
-        }
+        $marker->create($arg);
 
 		return $marker;
 	}
