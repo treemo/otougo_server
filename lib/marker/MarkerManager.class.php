@@ -33,11 +33,11 @@ class MarkerManager {
 		$sql = new Sql();
         $result = array();
 
-        // $sql->prepare('SELECT id, type FROM marker WHERE get_distance_metres(:latitude, :longitude, latitude, longitude) <= :distance AND last_update>FROM_UNIXTIME(:last_update)'.$filtre)
-        $sql->prepare('SELECT id, type FROM marker WHERE last_update>FROM_UNIXTIME(:last_update)'.$filtre)
-            // ->bindValue(':latitude', $latitude)
-            // ->bindValue(':longitude', $longitude)
-            // ->bindValue(':distance', $distance)
+        $sql->prepare('SELECT id, type FROM marker WHERE get_distance_metres(:latitude, :longitude, latitude, longitude) <= :distance AND last_update>FROM_UNIXTIME(:last_update)'.$filtre)
+        $sql->prepare('SELECT id, type FROM marker WHERE get_distance_metres(:latitude, :longitude, latitude, longitude) <= :distance AND last_update>FROM_UNIXTIME(:last_update)'.$filtre)
+            ->bindValue(':latitude', $latitude)
+            ->bindValue(':longitude', $longitude)
+            ->bindValue(':distance', $distance)
             ->bindValue(':last_update', $timeUpdate)
             ->execute();
 
