@@ -56,31 +56,31 @@ class Stats {
         foreach ($tableSql as $table) {
             $sql = new Sql();
 
-            $sql->prepare("SELECT user_agent FROM $table")
+            $sql->prepare("SELECT user_agent, count(user_agent) AS nb FROM $table GROUP BY user_agent")
                 ->execute();
 
             while( $data = $sql->fetch()) {
                 $browser = get_browser($data['user_agent']);
 
                 if (empty($stats['browser'][ $browser->browser ])) {
-                    $stats['browser'][ $browser->browser ] = 1;
+                    $stats['browser'][ $browser->browser ] = $data['nb'];
                 }
                 else {
-                    $stats['browser'][ $browser->browser ]++;
+                    $stats['browser'][ $browser->browser ] += $data['nb'];
                 }
 
                 if (empty($stats['browser_version'][ $browser->parent ])) {
-                    $stats['browser_version'][ $browser->parent ] = 1;
+                    $stats['browser_version'][ $browser->parent ] = $data['nb'];
                 }
                 else {
-                    $stats['browser_version'][ $browser->parent ]++;
+                    $stats['browser_version'][ $browser->parent ] += $data['nb'];
                 }
 
                 if (empty($stats['os'][ $browser->platform ])) {
-                    $stats['os'][ $browser->platform ] = 1;
+                    $stats['os'][ $browser->platform ] = $data['nb'];
                 }
                 else {
-                    $stats['os'][ $browser->platform ]++;
+                    $stats['os'][ $browser->platform ] += $data['nb'];
                 }
             }
 		}
