@@ -41,7 +41,7 @@ class MarkerCommon extends MarkerObject {
                     ->execute();
 
 		$sql = new Sql();
-        return  $sql->prepare('DELETE FROM marker_arret_transport WHERE marker_id = :id')
+        return  $sql->prepare('DELETE FROM marker_common WHERE marker_id = :id')
                     ->bindValue(':id', $this->id)
                     ->execute();
 	}
@@ -58,7 +58,7 @@ class MarkerCommon extends MarkerObject {
 
 		$sql = new Sql();
 
-        $sql->prepare('SELECT * FROM marker_arret_transport WHERE marker_id = :id')
+        $sql->prepare('SELECT * FROM marker_common WHERE marker_id = :id')
             ->bindValue(':id', $id)
             ->execute();
 
@@ -101,7 +101,7 @@ class MarkerCommon extends MarkerObject {
 
 		$sql = new Sql();
 
-        $sql->prepare('INSERT INTO marker_arret_transport (marker_id,last_station) VALUES (:marker_id,:last_station) ON DUPLICATE KEY UPDATE last_station=:last_station')
+        $sql->prepare('INSERT INTO marker_common (marker_id,last_station) VALUES (:marker_id,:last_station) ON DUPLICATE KEY UPDATE last_station=:last_station')
             ->bindValue(':marker_id', $this->id)
             ->bindValue(':last_station', $this->lastStation)
             ->execute();
