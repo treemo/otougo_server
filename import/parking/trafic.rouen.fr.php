@@ -26,3 +26,4 @@ foreach($result as $data) {
         'total'         => $nbTotal + $nbPlace,
     ));
 }
+

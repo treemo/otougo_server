@@ -13,7 +13,7 @@ foreach($result->d as $data) {
     MarkerManager::add('arretTransport', array(
         'name'				=> $data->pa_nom_long,
         'cp'				=> $data->pa_cod_commu_ass,
-        'lastUpdate'	=> mktime(0, 0, 0, $M, $J, $A),
+        'lastUpdate'	    => mktime(0, 0, 0, $M, $J, $A),
         'longitude'			=> $data->pa_x_wgs84,
         'latitude'			=> $data->pa_y_wgs84,
     ));
