@@ -5,11 +5,13 @@ include_once __DIR__ . '/MarkerObject.class.php';
 class MarkerCommon extends MarkerObject {
 	protected $lastStation;
 	protected $schedule;
+	protected $type;
 
 	function __construct() {
 		parent::__construct();
 		$this->lastStation = 0;
 		$this->schedule = array();
+		$this->type = '';
 	}
 
 
