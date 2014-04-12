@@ -4,6 +4,7 @@ include __DIR__ . '/../lib/marker/MarkerManager.class.php';
 include __DIR__ . '/../lib/functions.php';
 
 $dirList = array(
+    
     'bicycle' => array(
         'jcdecaux',
     ),
@@ -12,7 +13,11 @@ $dirList = array(
     ),
     'arretTransport' => array(
         'pointArretSM',
-        'tcar',
+        'pointArretEURE',
+        'tcar',   
+    ),
+    'horraireTrain' => array(
+        'horraireTrain',
     ),
 );
 
