@@ -10,7 +10,7 @@ foreach($result->d as $data) {
 	$M = substr($date, 4, -2); 
 	$J = substr($date, -2); 
 
-    MarkerManager::add('arretTransport', array(
+    MarkerManager::add('common', array(
         'name'				=> $data->pa_nom_long,
         'cp'				=> $data->pa_cod_commu_ass,
         'lastUpdate'	    => mktime(0, 0, 0, $M, $J, $A),

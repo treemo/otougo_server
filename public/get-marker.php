@@ -14,7 +14,7 @@ if (empty($_GET['f'])) {
 }
 
 include __DIR__ . '/../lib/marker/MarkerManager.class.php';
-echo MarkerManager::getZone($_GET['la'], $_GET['lo'], $_GET['d'], $_GET['t'], $_GET['f']);
+echo json_encode( MarkerManager::getZone($_GET['la'], $_GET['lo'], $_GET['d'], $_GET['t'], $_GET['f']));
 
 include __DIR__ . '/../lib/stats/Stats.class.php';
 Stats::addActionGetMarker($_GET['la'], $_GET['lo'], $_GET['d'], $_GET['t'], $_GET['f']);

@@ -17,7 +17,7 @@ foreach($result as $data) {
     $nbPlace = str_replace(' ', '', $data->field_places_libres);
     $nbTotal = str_replace(' ', '', $data->field_places_occupees);
 
-    MarkerManager::add('parking', array(
+    MarkerManager::add('carPark', array(
         'latitude'      => $latitude,
         'longitude'     => $longitude,
         'name'          => $data->title,
