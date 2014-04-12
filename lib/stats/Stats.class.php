@@ -19,13 +19,19 @@ class Stats {
 	}
     
     public static function addActionGetMarker($latitude, $longitude, $distance, $timeUpdate = 0, $filtre = '') {
-
         self::addAction('get_marker', array(
             'latitude' => $latitude,
             'longitude' => $longitude,
             'distance' => $distance,
             'timeUpdate' => $timeUpdate,
             'filtre' => $filtre,
+        ));
+	}
+    
+    public static function addActionGetMarkerInfo($id, $type) {
+        self::addAction('get_marker_info', array(
+            'marker_id' => $id,
+            'type' => $type,
         ));
 	}
 }

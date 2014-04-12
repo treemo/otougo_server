@@ -4,14 +4,14 @@ include __DIR__ . '/../lib/marker/MarkerManager.class.php';
 include __DIR__ . '/../lib/functions.php';
 
 $dirList = array(
-    // 'bicycle' => array(
-        // 'jcdecaux',
-    // ),
-    // 'parking' => array(
-        // 'trafic.rouen.fr',
-    // ),
+    'bicycle' => array(
+        'jcdecaux',
+    ),
+    'parking' => array(
+        'trafic.rouen.fr',
+    ),
     'arretTransport' => array(
-        // 'pointArretSM',
+        'pointArretSM',
         'tcar',
     ),
 );

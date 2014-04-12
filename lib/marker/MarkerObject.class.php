@@ -1,5 +1,8 @@
 <?php
 
+include_once __DIR__ . '/../../config/load.php';
+include_once __DIR__ . '/../mysql/Sql.class.php';
+
 class MarkerObject {
 
 	protected $errors;
