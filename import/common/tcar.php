@@ -41,7 +41,7 @@ function importScheduleFromUrl($url) {
             $schedule[$h] = array();
         }
 
-        $v = explode('</', $data)
+        $v = explode('</', $data);
         $v = reset($v);
         
         if ($v == '') {
