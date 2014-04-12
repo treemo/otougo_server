@@ -96,14 +96,16 @@ $gare[] = [ "longitude" => 1.098029,
             "latitude"  => 49.34179,
             "Nom"       => "Oissel",
             "code"      => "froil",];
-            
+
 $gare[] = [ "longitude" => 0.753805,
             "latitude"  => 49.621776,
             "Nom"       => "Yvetot",
             "code"      => "fryve",];
 
-
-
+$gare[] = [ "longitude" => -0.556099,
+            "latitude"  => 44.82607,
+            "Nom"       => "Bordeaux Saint Jean",
+            "code"      => "frboj",];
 
 
 
