@@ -47,69 +47,72 @@ function loadStation($x, $y, $name, $key, $lastStation = null) {
     ));
 }
 
-$gare[] = [ "longitude" => 1.094206,
-            "latitude"  => 49.449239,
-            "Nom"       => "Gare de rouen",
-            "code"      => "frurd",];
+if ( UPDATE_TYPE <= HOUR) {
 
-$gare[] = [ "longitude" => 2.380020,
-            "latitude"  => 48.840172,
-            "Nom"       => "Paris Bercy",
-            "code"      => "frpbe",];
+    $gare[] = [ "longitude" => 1.094206,
+                "latitude"  => 49.449239,
+                "Nom"       => "Gare de rouen",
+                "code"      => "frurd",];
 
-$gare[] = [ "longitude" => 2.366876,
-            "latitude"  => 48.841080,
-            "Nom"       => "Paris Austerlitz",
-            "code"      => "frpaz",];
+    $gare[] = [ "longitude" => 2.380020,
+                "latitude"  => 48.840172,
+                "Nom"       => "Paris Bercy",
+                "code"      => "frpbe",];
 
-$gare[] = [ "longitude" => 2.35869,
-            "latitude"  => 48.876098,
-            "Nom"       => "Paris Est",
-            "code"      => "frpst",];
+    $gare[] = [ "longitude" => 2.366876,
+                "latitude"  => 48.841080,
+                "Nom"       => "Paris Austerlitz",
+                "code"      => "frpaz",];
 
-$gare[] = [ "longitude" => 2.374225,
-            "latitude"  => 48.844737,
-            "Nom"       => "Paris Gare de Lyon",
-            "code"      => "frply",];
+    $gare[] = [ "longitude" => 2.35869,
+                "latitude"  => 48.876098,
+                "Nom"       => "Paris Est",
+                "code"      => "frpst",];
 
-$gare[] = [ "longitude" => 2.319101,
-            "latitude"  => 48.840755,
-            "Nom"       => "Paris Montparnasse",
-            "code"      => "frpmo",];
+    $gare[] = [ "longitude" => 2.374225,
+                "latitude"  => 48.844737,
+                "Nom"       => "Paris Gare de Lyon",
+                "code"      => "frply",];
 
-$gare[] = [ "longitude" => 2.324765,
-            "latitude"  => 48.876937,
-            "Nom"       => "Paris St Lazare",
-            "code"      => "frpsl",];
+    $gare[] = [ "longitude" => 2.319101,
+                "latitude"  => 48.840755,
+                "Nom"       => "Paris Montparnasse",
+                "code"      => "frpmo",];
 
-$gare[] = [ "longitude" => 1.081632,
-            "latitude"  => 49.920007,
-            "Nom"       => "Dieppe",
-            "code"      => "frafd",];
+    $gare[] = [ "longitude" => 2.324765,
+                "latitude"  => 48.876937,
+                "Nom"       => "Paris St Lazare",
+                "code"      => "frpsl",];
 
-$gare[] = [ "longitude" => 0.124517,
-            "latitude"  => 49.492849,
-            "Nom"       => "Le Havre",
-            "code"      => "fraez",];
+    $gare[] = [ "longitude" => 1.081632,
+                "latitude"  => 49.920007,
+                "Nom"       => "Dieppe",
+                "code"      => "frafd",];
 
-$gare[] = [ "longitude" => 1.098029,
-            "latitude"  => 49.34179,
-            "Nom"       => "Oissel",
-            "code"      => "froil",];
+    $gare[] = [ "longitude" => 0.124517,
+                "latitude"  => 49.492849,
+                "Nom"       => "Le Havre",
+                "code"      => "fraez",];
 
-$gare[] = [ "longitude" => 0.753805,
-            "latitude"  => 49.621776,
-            "Nom"       => "Yvetot",
-            "code"      => "fryve",];
+    $gare[] = [ "longitude" => 1.098029,
+                "latitude"  => 49.34179,
+                "Nom"       => "Oissel",
+                "code"      => "froil",];
 
-$gare[] = [ "longitude" => -0.556099,
-            "latitude"  => 44.82607,
-            "Nom"       => "Bordeaux Saint Jean",
-            "code"      => "frboj",];
+    $gare[] = [ "longitude" => 0.753805,
+                "latitude"  => 49.621776,
+                "Nom"       => "Yvetot",
+                "code"      => "fryve",];
+
+    $gare[] = [ "longitude" => -0.556099,
+                "latitude"  => 44.82607,
+                "Nom"       => "Bordeaux Saint Jean",
+                "code"      => "frboj",];
 
 
 
 
-foreach ( $gare as $v ) {
-    loadStation($v["longitude"], $v["latitude"], $v["Nom"], $v["code"], null);
+    foreach ( $gare as $v ) {
+        loadStation($v["longitude"], $v["latitude"], $v["Nom"], $v["code"], null);
+    }
 }

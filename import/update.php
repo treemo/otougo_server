@@ -1,5 +1,10 @@
 <?php
 
+if (!defined('UPDATE_TYPE')) {
+    include __DIR__ . 'update_define.php';
+    define('UPDATE_TYPE', MONTH);
+}
+
 include __DIR__ . '/../lib/marker/MarkerManager.class.php';
 include __DIR__ . '/../lib/functions.php';
 
@@ -26,6 +31,8 @@ foreach ($dirList as $scriptList) {
 
 set_time_limit(0);
 ignore_user_abort(true);
+
+date_default_timezone_set('Europe/Paris');
 
 ob_implicit_flush(true);
 header('Content-type: text/plain');
