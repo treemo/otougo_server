@@ -66,7 +66,7 @@ class MarkerManager {
             $result['error'] = self::$lastError;
         }
 
-        return $result->getData();
+        return $result;
 	}
 
 	public static function getLastError() {
