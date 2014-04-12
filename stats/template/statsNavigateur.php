@@ -46,7 +46,7 @@
             series: [{
                 type: 'pie',
                 name: 'Browser share',
-                data: [<?php echo json_encode($stat['browser']) ?>],
+                data: [<?php foreach ($stat['browser'] as $i => $v) echo "['$i',   $v]," ?>],
             }]
         });
         
@@ -57,7 +57,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Navigateur internet'
+                text: 'Versions des navigateur internet'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -77,7 +77,7 @@
             series: [{
                 type: 'pie',
                 name: 'Browser share',
-                data: [<?php echo json_encode($stat['browser_version']) ?>],
+                data: [<?php foreach ($stat['browser_version'] as $i => $v) echo "['$i',   $v]," ?>],
             }]
         });
         
@@ -88,7 +88,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Navigateur internet'
+                text: 'Systeme d\'exploitation'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -108,7 +108,7 @@
             series: [{
                 type: 'pie',
                 name: 'Browser share',
-                data: [<?php echo json_encode($stat['os']) ?>],
+                data: [<?php foreach ($stat['os'] as $i => $v) echo "['$i',   $v]," ?>],
             }]
         });
     });
