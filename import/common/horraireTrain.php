@@ -38,8 +38,8 @@ function loadStation($x, $y, $name, $key, $lastStation = null) {
     }
 
     MarkerManager::add('common', array(
-        'latitude'      => $x,
-        'longitude'     => $y,
+        'latitude'      => $y,
+        'longitude'     => $x,
         'name'          => $name,
         'lastUpdate'    => time(),
         'lastStation'   => $lastStation,
