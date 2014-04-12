@@ -16,8 +16,8 @@ $dirList = array(
         'trafic.rouen.fr',
     ),
     'common' => array(
-      'commonSM',
-        'commonEURE',
+        'pointArretSM',
+        'pointArretEURE',
         'tcar', 
         'horraireTrain',
     ),
