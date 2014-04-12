@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('UPDATE_TYPE')) {
-    include __DIR__ . 'update_define.php';
+    include __DIR__ . '/update_define.php';
     define('UPDATE_TYPE', MONTH);
 }
 
