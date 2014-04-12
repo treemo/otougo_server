@@ -8,6 +8,8 @@ class Stats {
 	public static function addAction($action, $dataList) {
 
         $sql = new Sql();
+        
+        $dataList['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 
         $sql->prepare('INSERT INTO stat_use_' . $action . ' (' . implode(',', array_keys($dataList)) . ') VALUES (:' . implode(',:', array_keys($dataList)) . ')');
         

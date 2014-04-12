@@ -153,6 +153,7 @@ DROP TABLE IF EXISTS `stat_use_get_marker`;
 CREATE TABLE IF NOT EXISTS `stat_use_get_marker` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_agent` varchar(4092) DEFAULT NULL,
   `latitude` float NOT NULL,
   `longitude` int(11) NOT NULL,
   `distance` int(11) NOT NULL,
@@ -171,6 +172,7 @@ DROP TABLE IF EXISTS `stat_use_get_marker_info`;
 CREATE TABLE IF NOT EXISTS `stat_use_get_marker_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_agent` varchar(4092) DEFAULT NULL,
   `marker_id` int(11) NOT NULL,
   `type` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
