@@ -20,7 +20,7 @@ class MarkerArretTransport extends MarkerObject {
 	public function create($arg) {
         parent::create($arg);
 
-        $this->lastStation = $arg['lastStation'];
+        $this->lastStation = empty($arg['lastStation']) ? null : $arg['lastStation'];
         $this->schedule = empty($arg['schedule']) ? array() : $arg['schedule'];
         $this->save(false);
 	}
