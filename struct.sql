@@ -148,8 +148,8 @@ CREATE TABLE IF NOT EXISTS `marker_schedule` (
 -- Structure de la table `stat_use_get_marke`
 --
 
-DROP TABLE IF EXISTS `stat_use_get_marke`;
-CREATE TABLE IF NOT EXISTS `stat_use_get_marke` (
+DROP TABLE IF EXISTS `stat_use_get_marker`;
+CREATE TABLE IF NOT EXISTS `stat_use_get_marker` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `latitude` float NOT NULL,
