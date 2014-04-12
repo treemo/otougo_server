@@ -26,7 +26,8 @@ function importScheduleFromUrl($url) {
         }
         
         if ( strpos($data, '</th') !== false) {
-            $indexHoraire[] = reset(explode('</', $data));
+            $data = explode('</', $data);
+            $indexHoraire[] = reset($data);
             continue;
         }
 
@@ -40,7 +41,8 @@ function importScheduleFromUrl($url) {
             $schedule[$h] = array();
         }
 
-        $v = reset(explode('</', $data));
+        $data = explode('</', $data);
+        $v = reset($data);
         
         if ($v == '') {
             continue;
