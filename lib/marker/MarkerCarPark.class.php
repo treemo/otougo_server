@@ -2,7 +2,7 @@
 
 include_once __DIR__ . '/MarkerObject.class.php';
 
-class MarkerParking extends MarkerObject {
+class MarkerCarPark extends MarkerObject {
 
     protected $nbAvailable;
 	protected $total;
@@ -36,7 +36,7 @@ class MarkerParking extends MarkerObject {
 
 		$sql = new Sql();
 
-        return  $sql->prepare('DELETE FROM marker_parking WHERE marker_id = :id')
+        return  $sql->prepare('DELETE FROM marker_carpark WHERE marker_id = :id')
                     ->bindValue(':id', $this->id)
                     ->execute();
 	}
@@ -53,7 +53,7 @@ class MarkerParking extends MarkerObject {
 
 		$sql = new Sql();
 
-        $sql->prepare('SELECT * FROM marker_parking WHERE marker_id = :id')
+        $sql->prepare('SELECT * FROM marker_carpark WHERE marker_id = :id')
             ->bindValue(':id', $id)
             ->execute();
 
@@ -79,7 +79,7 @@ class MarkerParking extends MarkerObject {
 
 		$sql = new Sql();
 
-        $sql->prepare('INSERT INTO marker_parking (marker_id,nb_available,total) VALUES (:marker_id,:nb_available,:total) ON DUPLICATE KEY UPDATE nb_available=:nb_available, total=:total')
+        $sql->prepare('INSERT INTO marker_carpark (marker_id,nb_available,total) VALUES (:marker_id,:nb_available,:total) ON DUPLICATE KEY UPDATE nb_available=:nb_available, total=:total')
             ->bindValue(':marker_id', $this->id)
             ->bindValue(':nb_available', $this->nbAvailable)
             ->bindValue(':total', $this->total)

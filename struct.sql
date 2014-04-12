@@ -79,54 +79,55 @@ CREATE TABLE IF NOT EXISTS `marker` (
   `last_update` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `type` (`type`(512),`latitude`,`longitude`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `marker_arret_transport`
+-- Structure de la table `marker_carpark`
 --
 
-DROP TABLE IF EXISTS `marker_arret_transport`;
-CREATE TABLE IF NOT EXISTS `marker_arret_transport` (
+DROP TABLE IF EXISTS `marker_carpark`;
+CREATE TABLE IF NOT EXISTS `marker_carpark` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marker_id` int(11) NOT NULL,
+  `nb_available` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `marker_id` (`marker_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `marker_common`
+--
+
+DROP TABLE IF EXISTS `marker_common`;
+CREATE TABLE IF NOT EXISTS `marker_common` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marker_id` int(11) NOT NULL,
   `last_station` int(11) DEFAULT NULL,
+  `type` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `marker_id` (`marker_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `marker_bicycle`
+-- Structure de la table `marker_cycle`
 --
 
-DROP TABLE IF EXISTS `marker_bicycle`;
-CREATE TABLE IF NOT EXISTS `marker_bicycle` (
+DROP TABLE IF EXISTS `marker_cycle`;
+CREATE TABLE IF NOT EXISTS `marker_cycle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marker_id` int(11) NOT NULL,
   `nb_available` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `marker_id` (`marker_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `marker_parking`
---
-
-DROP TABLE IF EXISTS `marker_parking`;
-CREATE TABLE IF NOT EXISTS `marker_parking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `marker_id` int(11) NOT NULL,
-  `nb_available` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `marker_id` (`marker_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -148,8 +149,8 @@ CREATE TABLE IF NOT EXISTS `marker_schedule` (
 -- Structure de la table `stat_use_get_marke`
 --
 
-DROP TABLE IF EXISTS `stat_use_get_marker`;
-CREATE TABLE IF NOT EXISTS `stat_use_get_marker` (
+DROP TABLE IF EXISTS `stat_use_get_marke`;
+CREATE TABLE IF NOT EXISTS `stat_use_get_marke` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `latitude` float NOT NULL,
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `stat_use_get_marker` (
   `timeUpdate` int(11) NOT NULL,
   `filtre` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `stat_use_get_marker_info` (
   `marker_id` int(11) NOT NULL,
   `type` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
