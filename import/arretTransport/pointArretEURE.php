@@ -8,7 +8,7 @@ foreach($result->d as $data) {
     list($A, $M, $J ) = explode("-", $date);
     $J = substr($J, 0, 2);
 
-    MarkerManager::add('arretTransport', array(
+    MarkerManager::add('common', array(
         'name'				=> $data->intitule,
         'lastUpdate'	    => mktime(0, 0, 0, $M, $J, $A),
         'longitude'			=> $data->longitude,

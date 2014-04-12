@@ -94,7 +94,7 @@ function importLigne($id) {
 
     $last = null;
     foreach($inputData as $data) {
-        $last = MarkerManager::add('arretTransport', array(
+        $last = MarkerManager::add('common', array(
             'latitude'      => $data['X'],
             'longitude'     => $data['Y'],
             'name'          => $data['Nom'],
