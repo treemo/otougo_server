@@ -95,8 +95,8 @@ function importLigne($id) {
     $last = null;
     foreach($inputData as $data) {
         $last = MarkerManager::add('common', array(
-            'latitude'      => $data['X'],
-            'longitude'     => $data['Y'],
+            'latitude'      => $data['Y'],
+            'longitude'     => $data['X'],
             'name'          => $data['Nom'],
             'lastUpdate'    => time(),
             'lastStation'   => empty($last) ? null : $last->getId(),
