@@ -37,7 +37,6 @@ ignore_user_abort(true);
 
 date_default_timezone_set('Europe/Paris');
 
-ob_implicit_flush(true);
 header('Content-type: text/plain');
 echo $totalScript, "\n";
 
@@ -45,6 +44,8 @@ $nbScript = 0;
 foreach ($dirList as $dir => $scriptList) {
     foreach ($scriptList as $script) {
         echo round(100 * $nbScript++ / $totalScript), "\n";
+        @ob_flush();
+        flush();
         include __DIR__ . "/$dir/$script.php";
     }
 }
